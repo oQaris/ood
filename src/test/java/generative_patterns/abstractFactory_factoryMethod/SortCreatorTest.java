@@ -1,4 +1,4 @@
-package factorymethod;
+package generative_patterns.abstractFactory_factoryMethod;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

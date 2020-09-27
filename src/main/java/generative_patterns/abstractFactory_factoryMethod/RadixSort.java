@@ -1,4 +1,4 @@
-package factorymethod;
+package generative_patterns.abstractFactory_factoryMethod;
 
 public class RadixSort implements ISort {
     static int getMax(int[] A) {

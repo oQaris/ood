@@ -1,4 +1,4 @@
-package factorymethod;
+package generative_patterns.abstractFactory_factoryMethod;
 
 public class SelectionSort implements ISort {
     public void sort(int[] arr) {
