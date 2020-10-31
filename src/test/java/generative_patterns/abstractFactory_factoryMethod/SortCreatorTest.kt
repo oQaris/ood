@@ -1,45 +1,47 @@
-package generative_patterns.abstractFactory_factoryMethod;
+package generative_patterns.abstractFactory_factoryMethod
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import generative_patterns.abstractFactory_factoryMethod.SortCreator.heapsort
+import generative_patterns.abstractFactory_factoryMethod.SortCreator.radixSort
+import generative_patterns.abstractFactory_factoryMethod.SortCreator.selectionSort
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+import java.util.*
 
-import java.util.Arrays;
-
-class SortCreatorTest {
-    private int[] array1;
-    private int[] array2;
+internal class SortCreatorTest {
+    private lateinit var array1: IntArray
+    private lateinit var array2: IntArray
 
     @BeforeEach
-    void setUp() {
-        int SIZE = 1000;
-        array1 = new int[SIZE];
-        array2 = new int[SIZE];
-        for (int i = 0; i < SIZE; i++) {
-            int item = (int) (Math.random() * 200);
-            array1[i] = item;
-            array2[i] = item;
+    fun setUp() {
+        val size = 1000
+        array1 = IntArray(size)
+        array2 = IntArray(size)
+        for (i in 0 until size) {
+            val item = (Math.random() * 200).toInt()
+            array1[i] = item
+            array2[i] = item
         }
     }
 
     @Test
-    void TestSelectionSort() {
-        SortCreator.selectionSort().sort(array1);
-        Arrays.sort(array2);
-        Assertions.assertArrayEquals(array1, array2);
+    fun testSelectionSort() {
+        selectionSort().sort(array1)
+        Arrays.sort(array2)
+        Assertions.assertArrayEquals(array1, array2)
     }
 
     @Test
-    void TestHeapsort() {
-        SortCreator.heapsort().sort(array1);
-        Arrays.sort(array2);
-        Assertions.assertArrayEquals(array1, array2);
+    fun testHeapsort() {
+        heapsort().sort(array1)
+        Arrays.sort(array2)
+        Assertions.assertArrayEquals(array1, array2)
     }
 
     @Test
-    void TestRadixSort() {
-        SortCreator.radixSort().sort(array1);
-        Arrays.sort(array2);
-        Assertions.assertArrayEquals(array1, array2);
+    fun testRadixSort() {
+        radixSort().sort(array1)
+        Arrays.sort(array2)
+        Assertions.assertArrayEquals(array1, array2)
     }
 }
