@@ -30,7 +30,10 @@ internal class MyCollectionsTest {
         list2.data.add(31)
 
         assertArrayEquals(intArrayOf(0, 32, 32, 56), list.getSortedArray())
-        assertArrayEquals(intArrayOf(0, 5, 67), set.getSortedArray())          // так как set не хранит одинаковые объекты
+        assertArrayEquals(
+            intArrayOf(0, 5, 67),
+            set.getSortedArray()
+        )          // так как set не хранит одинаковые объекты
         assertArrayEquals(intArrayOf(7, 9, 31, 99), list2.getSortedArray())
     }
 }
