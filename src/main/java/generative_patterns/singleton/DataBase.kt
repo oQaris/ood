@@ -2,14 +2,14 @@ package generative_patterns.singleton
 
 import java.util.*
 
-object DataBase {
-    val words: MutableSet<String>
+object DataBase : IDataBase {
+    override val words: MutableSet<String>
 
     fun getInstance(): DataBase {
         return this
     }
 
-    fun addWord(word: String) {
+    override fun addWord(word: String) {
         words.add(word)
     }
 
