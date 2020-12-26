@@ -7,5 +7,7 @@ enum class HouseType {
     Hut;
 }
 
-data class House(val type : HouseType,
-            private val schema: String /*предположительно весит несколько гигабайт*/)
+data class House(
+    val type: HouseType,
+    private val schema: String /*предположительно весит несколько гигабайт*/
+)

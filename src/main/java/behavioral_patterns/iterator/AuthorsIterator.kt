@@ -3,11 +3,11 @@ package behavioral_patterns.iterator
 data class Author(val name: String, val numberOfBooks: Int)
 
 class Authors(val set: MutableList<Author>) : Iterable<Author> {
-    override fun iterator(): Iterator<Author> = SimpleAuthorIterator( this)
+    override fun iterator(): Iterator<Author> = SimpleAuthorIterator(this)
 }
 
 class SimpleAuthorIterator(private val authors: Authors, var current: Int = -1) : Iterator<Author> {
-    override fun hasNext(): Boolean = authors.set.size-1 > current
+    override fun hasNext(): Boolean = authors.set.size - 1 > current
 
     override fun next(): Author {
         current++
@@ -28,7 +28,7 @@ class ReverseAuthorIterator(private val authors: Authors, var current: Int = aut
 class BookCountAuthorIterator(authors: Authors, var current: Int = -1) : Iterator<Author> {
     private val sortedAuthor: List<Author> = authors.set.sortedBy { it.numberOfBooks }
 
-    override fun hasNext(): Boolean = sortedAuthor.size -1> current
+    override fun hasNext(): Boolean = sortedAuthor.size - 1 > current
 
     override fun next(): Author {
         current++

@@ -59,13 +59,13 @@ class MotorWorksState : ICarState {
             c.motorWorks = true
             c.state = MotorStoppedState.instance
         } else
-            throw UnsupportedOperationException("Прежде чем остановить двигатель уменьшите скорость до 0!");
+            throw UnsupportedOperationException("Прежде чем остановить двигатель уменьшите скорость до 0!")
     }
 
     override fun speed(c: Car, speed: Int) {
         if (speed >= 0)
             c.speed = speed
         else
-            throw UnsupportedOperationException("Значение скорости не может быть отрицательным!");
+            throw UnsupportedOperationException("Значение скорости не может быть отрицательным!")
     }
 }

@@ -7,6 +7,7 @@ internal class DataBaseProxyTest {
 
     @Test
     fun addWordTest() {
+        // Внимание! Запускать отдельно от теста паттерна Singleton, поскольку используется одна база данных!
         val db = DataBaseProxy()
         db.addWord(" qwerty  ")
         db.addWord("09876")

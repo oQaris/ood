@@ -21,11 +21,12 @@ internal class EventManagerTest {
         obj.eventManager.unSubscribe(EventManager.Event.TEXT_CHANGED, listener) // отписываемся
         obj.text = "без изменений"      // этого не будет в логе
 
-        assertEquals(listOf(
-                  "Текст изменился на: 12345",
-                  "Текст изменился на: 12345",               // При событии TO_EMPTY передаётся старое значение
-                  "Текст \"12345\" изменился на пустой",
-                  "Текст изменился на: end"
+        assertEquals(
+            listOf(
+                "Текст изменился на: 12345",
+                "Текст изменился на: 12345",               // При событии TO_EMPTY передаётся старое значение
+                "Текст \"12345\" изменился на пустой",
+                "Текст изменился на: end"
             ), obj.eventManager.log
         )
     }
